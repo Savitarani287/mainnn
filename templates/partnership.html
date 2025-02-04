@@ -1,69 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/partnership.css">
-    <title>Document</title>
-</head>
+{% block title %}Home - ZADAR{% endblock %}
 
-<body>
-    <header>
-        <nav>
-            <img class="logo" src="/static/images/logo.png" alt="logo">
-            <h1>ZADAR</h1>
-            <div class="right">
-                <a href="{{url_for('home')}}">Home</a>
-                <a href="{{url_for('about')}}">About</a>
-                <a href="{{url_for('services')}}">Services</a>
-                <a href="{{url_for('partnership')}}">Partnership & Media</a>
-                <a href="{{url_for('pricing')}}">Pricing Plan</a>
-                <a href="{{ url_for('contact') }}" class="button">Contact</a>
-                <img class="mar" src="/static/images/int.svg" alt="">
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='partnership.css') }}">
+{% endblock %}
 
-
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M6 9L11.2929 14.2929C11.6262 14.6262 11.7929 14.7929 12 14.7929C12.2071 14.7929 12.3738 14.6262 12.7071 14.2929L18 9"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <a href="{{ url_for('signup') }}">
-                    <img src="/static/images/profile.svg" alt="">
-                </a>
-
-
-            </div>
-        </nav>
-    </header>
+{% block content %}
+<main>
     <div class="pm">
-        <h1>Partnership & Media</h1>
-        <p>Zdar believes in the power of partnership.</p>
+        <div class="box">
+            <h1>Partnership & Media</h1>
+            <p>Zdar believes in the power of partnership.</p>
+        </div>
     </div>
-    <main>
-        <div class="hero">
-            <h2>Our Approach</h2>
+
+
+    <div class="company">
+        <div class="Cright">
+            <h2 class="orange">Our Approach</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, illo corrupti, optio aliquid
                 voluptatibus harum vitae sapiente qui aperiam commodi id aliquam sit facere porro natus officia dolor.
                 Consectetur rem veritatis non suscipit natus autem libero nisi officia, odit temporibus dolorem id!
                 Porro debitis saepe ad nam molestiae quos magnam ab perspiciatis aperiam, sequi rerum necessitatibus
                 voluptas quod obcaecati adipisci?</p>
         </div>
-        <img src="/static/images/side.png" alt="">
-    </main>
-    <footer>
-        <p>&copy; 2025 ZADAR - All Rights Reserved</p>
-        <div class="cent">
-            <span>Privacy Policy</span>
-            <span>Cookies</span>
-            <span>Terms and Conditions</span>
-        </div>
-        <div class="fRight">
-        <img src="/static/images/facebook.png" alt="facebook" width="20px" >
-        <img src="/static/images/twitter.png" alt="twitter" width="20px" >
-        <img src="/static/images/linkedin.png" alt="linkedin" width="20px" >
+    <img src="/static/images/side.png" alt="">
     </div>
-    </footer>
-</body>
-
-</html>
+    {% endblock %}

@@ -101,7 +101,7 @@ div video{
 .buton{
     display: flex;
     justify-content:space-evenly ;
-    margin-top: 100px;
+    margin-top: 90px;
 }
 
 .buton button{

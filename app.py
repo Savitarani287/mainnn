@@ -1,5 +1,5 @@
 from flask import Flask, render_template , url_for
-from form import CompanyAccount
+from form import CompanyAccount , CompanyAccount2
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -52,9 +52,9 @@ def companyaccount():
     form = CompanyAccount()
     return render_template('companyaccount.html', form = form)
 
-@app.route('/companyaccount2')
+@app.route('/companyaccount2' , methods=['GET', 'POST'])
 def companyaccount2():
-    form = companyaccount2()
+    form = CompanyAccount2()
     return render_template('companyaccount2.html',form = form)
 
 @app.route('/candidateaccount2')

@@ -14,81 +14,55 @@
         <div class="box1">
             <form action="" method="post" enctype="multipart/form-data" id="applicant-form">
                 <div class="form-group">
-                    <label for="photo">Upload Logo</label>
-                    <input type="file" id="photo" name="photo" accept="image/*" required>
+                    {{ form.photo.label }}
+                    {{ form.photo(class="form-control") }}
                 </div>
                 <div class="single">
                     <div class="form-group">
-                        <label for="website">Your Website Link</label>
-                        <input type="url" id="website" name="website" placeholder="www.sodewa.com" required>
+                        {{form.website_link.label}}
+                        {{ form.website_link(placeholder="www.sodewa.com")}}
                     </div>
                     <div class="form-group">
-                        <label for="companyname">Company's name if doesn't exist</label>
-                        <select id="companyname" name="country" required>
-                            <option value="">Select</option>
-                            <option value="company1">Company 1</option>
-                            <option value="company2">Company 2</option>
-                        </select>
-                    </div>
+                        {{ form.company_name.label }}
+                        {{ form.company_name }}
+                    </div>                    
                 </div>
                 <div class="single">
                     <div class="form-group">
-                        <label for="sector">Name sector if doesn't exist</label>
-                        <select id="sector" name="sector" required>
-                            <option value="">Select</option>
-                            <option value="sector1">sector 1</option>
-                            <option value="sector2">sector 2</option>
-                        </select>
+                        {{ form.sector_name.label }}
+                        {{ form.sector_name(placeholder="Select Sector")}}
                     </div>
                     <div class="form-group">
-                        <label for="country">Country's name if doesn't exist</label>
-                        <select id="country" name="country" required>
-                            <option value="">Select</option>
-                            <option value="country1">Country 1</option>
-                            <option value="country2">Country 2</option>
-                        </select>
+                        {{ form.country_name.label }}
+                        {{ form.country_name }}
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="city">City name if doesn't exist</label>
-                    <select id="city" name="city" required>
-                        <option value="">Select</option>
-                        <option value="city1">City 1</option>
-                        <option value="city2">City 2</option>
-                    </select>
+                    {{ form.city_name.label }}
+                    {{ form.city_name }}
                 </div>
                 <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" id="address" name="address" placeholder="Enter address" required>
+                    {{ form.address.label }}
+                    {{ form.address(placeholder="Enter Address") }}
                 </div>
                 <div class="single">
                     <div class="form-group">
-                        <label for="telephone-code">Telephone</label>
-                        <select id="telephone-code" name="telephone-code" required>
-                            <option value="">+XX</option>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                        </select>
+                        {{ form.telephone.label }}
+                        {{ form.telephone }}
                     </div>
                     <div class="form-group">
-                        <label for="telephone">Number</label>
-                        <input type="tel" id="telephone" name="telephone" placeholder="XXX-XXX-XXXX"
-                            pattern="\d{3}-\d{3}-\d{4}" required>
+                        {{ form.number.label }}
+                        {{ form.number }}
                     </div>
                     <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                        {{form.email.label}}
+                        {{ form.email(placeholder="example@domain.com")}}
                     </div>
                 </div>
                 <div class="single">
                     <div class="form-group">
-                        <label for="contact">Contact</label>
-                        <select id="contact" name="contact" required>
-                            <option value="">Select</option>
-                            <option value="option1">Mr.</option>
-                            <option value="option2">Mrs</option>
-                            <option value="option3">Miss</option>
-                        </select>
+                        {{ form.contact.label }}
+                        {{ form.contact }}
                     </div>
                     <div class="form-group">
                         {{form.first_name.label}}
@@ -98,16 +72,12 @@
                         {{form.last_name.label}}
                         {{ form.last_name}}
                     </div>
-                    <div class="form-group">
-                        <label for="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="last-name" placeholder="Enter last name" required>
-                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="presentation">Company's Presentation</label>
-                    <textarea id="presentation" name="presentation"
-                        placeholder="Write Company's presentation"></textarea>
+                    {{ form.company_presentation.label }}
+                    {{ form.company_presentation(placeholder="Write Company's presentation") }}
                 </div>
+
 
                 <a href="{{ url_for('companyaccount2') }}" class="btn">Next</a>
 

@@ -2,9 +2,9 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, TelField,FileField , RadioField
 from wtforms.validators import DataRequired, Email ,URL
 
-class RegistrationForm(FlaskForm):
+class CompanyAccount(FlaskForm):
     photo = FileField("Upload Logo", validators=[DataRequired()])
-    website_link = StringField("Website Link", validators=[DataRequired(),URL()])
+    website_link = StringField(" Your Website Link", validators=[DataRequired(),URL()])
     
     company_name = SelectField(
         "Company Name", 
@@ -38,7 +38,7 @@ class RegistrationForm(FlaskForm):
         validators=[DataRequired()]
     )
     
-    number = StringField("Phone Number", validators=[DataRequired()])
+    number = TelField("Phone Number", validators=[DataRequired()])
     email = StringField("Email", validators=[DataRequired(), Email()])
     
     contact = SelectField(
@@ -50,7 +50,7 @@ class RegistrationForm(FlaskForm):
     first_name = StringField("First Name", validators=[DataRequired()])
     last_name = StringField("Last Name", validators=[DataRequired()])
     
-    company_presentation = StringField("Company Presentation (Text or Link)", validators=[DataRequired()])
+    company_presentation = StringField("Company's Presentation", validators=[DataRequired()])
 
 class CompanyAccount2(FlaskForm):
     

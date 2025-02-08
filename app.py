@@ -1,8 +1,11 @@
 from flask import Flask, render_template , url_for
+from form import CompanyAccount
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
 
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'G528JYFYJKSDGFKWRL57';
 
 @app.route('/')
 def home():
@@ -44,13 +47,15 @@ def candidateaccount():
 def signuporloginascompany():
     return render_template('signuporloginascompany.html')
 
-@app.route('/companyaccount')
+@app.route('/companyaccount', methods=['GET', 'POST'])
 def companyaccount():
-    return render_template('companyaccount.html')
+    form = CompanyAccount()
+    return render_template('companyaccount.html', form = form)
 
 @app.route('/companyaccount2')
 def companyaccount2():
-    return render_template('companyaccount2.html')
+    form = companyaccount2()
+    return render_template('companyaccount2.html',form = form)
 
 @app.route('/candidateaccount2')
 def candidateaccount2():

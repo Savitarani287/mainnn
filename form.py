@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SelectField, TelField,FileField , RadioField
+from wtforms import StringField, SelectField, TelField,FileField , RadioField, TextAreaField
 from wtforms.validators import DataRequired, Email ,URL
 
 class CompanyAccount(FlaskForm):
@@ -109,3 +109,74 @@ class CompanyAccount2(FlaskForm):
         choices=[("communication", "Communication"), ("teamwork", "Teamwork"), ("leadership", "Leadership"), ("problem_solving", "Problem Solving")],
         validators=[DataRequired()]
     )
+class CandidateAccount(FlaskForm):
+            photo = FileField("Upload Logo", validators=[DataRequired()])
+            linkedIn_link = StringField(" Your LinkedIn Link", validators=[DataRequired(),URL()])
+
+
+            country_name = SelectField(
+             "Country", 
+            choices=[("select", "Select"),("us", "United States"), ("in", "India"), ("uk", "United Kingdom")], 
+            validators=[DataRequired()]
+            )  
+
+            city_name = SelectField(
+            "City", 
+            choices=[("select", "Select"),("ny", "New York"), ("la", "Los Angeles"), ("ldn", "London")], 
+            validators=[DataRequired()]
+            ) 
+
+            address = StringField("Address", validators=[DataRequired()])
+
+            country_code = SelectField(
+            "Country Code", 
+            choices=[("select", "Select"),("+1", "+1 USA"), ("+91", "+91 India"), ("+44", "+44 UK")], 
+            validators=[DataRequired()]
+            )
+            number = TelField("Phone Number", validators=[DataRequired()])
+            email = StringField("Email", validators=[DataRequired(), Email()])
+
+            first_name = StringField("First Name", validators=[DataRequired()])
+            last_name = StringField("Last Name", validators=[DataRequired()])
+
+            candidate_presentation = TextAreaField("Candidate Presentation", validators=[DataRequired()])
+
+            contract = SelectField(
+            "Contract Type", 
+            choices=[("select", "Select"),("ft", "Fulltime"), ("pt", "Parttime")], 
+            validators=[DataRequired()]
+            )
+
+            sector_name = SelectField(
+            "Sector", 
+            choices=[("select", "Select"),("tech", "Technology"), ("finance", "Finance"), ("health", "Healthcare")], 
+            validators=[DataRequired()]
+            ) 
+
+            position_name = SelectField(
+            "Name Position", 
+            choices=[("select", "Select"),("Manager", "Manager"), ("finance", "Financer"), ("developer", "Developer")], 
+            validators=[DataRequired()]
+            )   
+
+            
+            disability = RadioField(
+                 "Profile with Disability?", 
+                 choices=[("yes", "Yes"), ("no", "No")],validators=[DataRequired()]
+            )
+
+            age = StringField("Age",validators=[DataRequired()])
+
+            experience = SelectField(
+            "Experience", 
+            choices=[("select", "Select"),("0-2", "0-2 years"), ("3+", "3 + years"),], 
+            validators=[DataRequired()]
+            ) 
+
+            salary = SelectField(
+            "Salary Expectation", 
+            choices=[("select", "Select"),("$30000-$50000", "$30000-$50000"), ("$70000-$90000", "$70000-$90000"),], 
+            validators=[DataRequired()]
+            )      
+
+            

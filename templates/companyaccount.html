@@ -15,7 +15,7 @@
             <form action="" method="post" enctype="multipart/form-data" id="applicant-form">
                 <div class="form-group">
                     {{ form.photo.label }}
-                    {{ form.photo(class="form-control") }}
+                    {{ form.photo}}
                 </div>
                 <div class="single">
                     <div class="form-group">
@@ -88,7 +88,7 @@
         </div>
     </div>
 </main>
-{% endblock %}
+
 
 <script>
     document.getElementById('applicant-form').addEventListener('submit', function (event) {
@@ -101,3 +101,4 @@
         }
     });
 </script>
+{% endblock %}

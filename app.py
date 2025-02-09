@@ -1,9 +1,5 @@
 from flask import Flask, render_template , url_for
-<<<<<<< HEAD
 from form import CompanyAccount , CandidateAccount, CompanyAccount2
-=======
-from form import CompanyAccount , CompanyAccount2
->>>>>>> 299e4ed95be5806f6b775064e6ed59cf76a6b2b6
 from flask_sqlalchemy import SQLAlchemy
 
 

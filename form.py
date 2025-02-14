@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SelectField, TelField,FileField , RadioField, TextAreaField
+from wtforms import StringField, SelectField, TelField,FileField , RadioField, TextAreaField, DateField
 from wtforms.validators import DataRequired, Email ,URL
 
 class CompanyAccount(FlaskForm):
@@ -179,4 +179,81 @@ class CandidateAccount(FlaskForm):
             validators=[DataRequired()]
             )      
 
+class CandidateAccount2(FlaskForm):
+        first_name = StringField("First Name", validators=[DataRequired()])
+        last_name = StringField("Last Name", validators=[DataRequired()])
+        experience = SelectField(
+            "Experience", 
+            choices=[("select", "Select"),("0-2", "0-2 years"), ("3+", "3 + years"),], 
+            validators=[DataRequired()]
+            ) 
+
             
+        salary = SelectField(
+        "Salary Expectation", 
+        choices=[("select", "Select"),("$30000-$50000", "$30000-$50000"), ("$70000-$90000", "$70000-$90000"),], 
+        validators=[DataRequired()]
+        )
+        first_name = StringField("First Name", validators=[DataRequired()])
+        number = TelField("Phone Number", validators=[DataRequired()])
+        email = StringField("Email", validators=[DataRequired(), Email()])
+        age = StringField("Age",validators=[DataRequired()])
+        gender_preference = SelectField(
+        "Select Gender", 
+        choices=[("select", "Select"),("male", "Male"), ("female", "Female"), ("any", "Any")],
+        validators=[DataRequired()]
+         )
+        salary = SelectField(
+        "Salary Expectation", 
+        choices=[("select", "Select"),("$30000-$50000", "$30000-$50000"), ("$70000-$90000", "$70000-$90000"),], 
+        validators=[DataRequired()]
+        )
+        #  next section
+        disability = RadioField(
+        "Profile with Disability?", 
+        choices=[("yes", "Yes"), ("no", "No")],validators=[DataRequired()]
+        )
+        first_name = StringField("First Name", validators=[DataRequired()])
+        experience = SelectField(
+            "Experience", 
+            choices=[("select", "Select"),("0-2", "0-2 years"), ("3+", "3 + years"),], 
+            validators=[DataRequired()]
+        )
+
+        salary = SelectField(
+        "Salary Expectation", 
+        choices=[("select", "Select"),("$30000-$50000", "$30000-$50000"), ("$70000-$90000", "$70000-$90000"),], 
+        validators=[DataRequired()]
+        )
+
+        salary = SelectField(
+        "Salary Expectation", 
+        choices=[("select", "Select"),("$30000-$50000", "$30000-$50000"), ("$70000-$90000", "$70000-$90000"),], 
+        validators=[DataRequired()]
+        ) 
+        candidate_presentation = TextAreaField("Candidate Presentation", validators=[DataRequired()])
+        candidate_presentation = TextAreaField("Candidate Presentation", validators=[DataRequired()])
+        candidate_presentation = TextAreaField("Candidate Presentation", validators=[DataRequired()])
+       
+        # next section
+
+
+        first_name = StringField("First Name", validators=[DataRequired()])
+        first_name = StringField("First Name", validators=[DataRequired()])
+        date = DateField('Date', format='%Y-%m-%d', validators=[DataRequired()])
+        candidate_presentation = TextAreaField("Candidate Presentation", validators=[DataRequired()])
+
+         # next section
+        first_name = StringField("First Name", validators=[DataRequired()])
+        first_name = StringField("First Name", validators=[DataRequired()])
+        date = DateField('Date', format='%Y-%m-%d', validators=[DataRequired()])
+        
+        # next section
+
+        candidate_presentation = TextAreaField("Candidate Presentation", validators=[DataRequired()])
+
+
+
+
+        
+                  

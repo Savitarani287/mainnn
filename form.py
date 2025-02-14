@@ -55,7 +55,7 @@ class CompanyAccount(FlaskForm):
 class CompanyAccount2(FlaskForm):
     
     position_name = SelectField(
-        "Position Name", 
+        "Name Position ", 
         choices=[("developer", "Developer"), ("designer", "Designer"), ("manager", "Manager")],
         validators=[DataRequired()]
     )
@@ -63,7 +63,7 @@ class CompanyAccount2(FlaskForm):
     job_offer = StringField("Job Offer", validators=[DataRequired()])
     
     contract_type = SelectField(
-        "Contract Type", 
+        "Search Contract Type", 
         choices=[("full_time", "Full-Time"), ("part_time", "Part-Time"), ("contract", "Contract")],
         validators=[DataRequired()]
     )
@@ -74,15 +74,15 @@ class CompanyAccount2(FlaskForm):
         validators=[DataRequired()]
     )
     
-    age_group = RadioField(
-        "Age Group", 
-        choices=[("18-25", "18-25"), ("26-35", "26-35"), ("36-45", "36-45"), ("46+", "46 and above")],
-        validators=[DataRequired()]
+    age_group = RadioField("Age Category", 
+    choices=[("up to 20", "Up to 20"), ("21-30", "21-30"), ("31-40", "31-40"), ("41-50", "41-50"), ("51-60", "51-60"), ("60+", "60 and up")],
+    validators=[DataRequired()]
     )
+
     
-    search_contract_type = SelectField(
-        "Search Contract Type", 
-        choices=[("full_time", "Full-Time"), ("part_time", "Part-Time"), ("contract", "Contract")],
+    experience = SelectField(
+        "Experience", 
+        choices=[("duration 1", "DURATION 1"), ("duration 2", "DURATION 2")],
         validators=[DataRequired()]
     )
     

@@ -3,6 +3,7 @@
 {% block title %}Home - ZADAR{% endblock %}
 
 {% block styles %}
+
 <link rel="stylesheet" href="{{ url_for('static', filename='candidateaccount2.css') }}">
 {% endblock %}
 
@@ -16,6 +17,7 @@
                     <div>
                         {{form.first_name.label}}
                         {{ form.first_name}}
+
                     </div>
                     <div>
                         {{form.last_name.label}}
@@ -146,6 +148,7 @@
                 <button type="submit" class="btn">Submit</button>
             </form>
         </div>
+<<<<<<< HEAD
         <div class="box2">
             <img src="/static/images/presentation.jpeg" alt="Presentation">
         </div>
@@ -164,4 +167,19 @@
         }
     });
 </script>
+=======
+    </main>
+
+    <script>
+        document.getElementById('applicant-form').addEventListener('submit', function(event) {
+            const telephone = document.getElementById('telephone').value;
+            const telephonePattern = /\d{3}-\d{3}-\d{4}/;
+
+            if (!telephonePattern.test(telephone)) {
+                event.preventDefault();
+                alert('Please enter a valid telephone number in the format XXX-XXX-XXXX.');
+            }
+        });
+    </script>
+>>>>>>> 25cafec69cd131ee20adcce596a5d3661f72ed6f
 {% endblock %}
